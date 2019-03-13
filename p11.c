@@ -1,3 +1,4 @@
+//Palindrome check using recursion
 #include<stdio.h>
 #include<string.h>
 int palin(char str[],int s,int e)

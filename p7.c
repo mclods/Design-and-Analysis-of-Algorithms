@@ -1,3 +1,4 @@
+//Decimal to binary using recursion
 #include<stdio.h>
 int decBin(int n)
 {

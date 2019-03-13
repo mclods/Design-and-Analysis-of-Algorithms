@@ -1,3 +1,4 @@
+//Product of elements using recursion
 #include<stdio.h>
 int mul(int arr[],int s,int e)
 {

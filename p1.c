@@ -1,3 +1,4 @@
+//Generating Random Array and Multiplying all the elements
 #include<stdio.h>
 #include<stdlib.h>
 int mul(int arr[],int l)
