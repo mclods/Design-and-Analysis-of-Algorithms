@@ -25,3 +25,7 @@ p22	->//Quick Sort
 p23	->//DAA Assignment Recursion
 p24	->//Find square root of a number using Divide and Conquer
 p25	->//Fractional Knapsack Problem
+p26	->//Job Sequencing with Deadlines
+p27	->//Activity Selection
+p28	->//Optimal Storage on Tapes
+p30	->////Huffman Codes
