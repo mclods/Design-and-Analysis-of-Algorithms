@@ -28,4 +28,4 @@ p25	->//Fractional Knapsack Problem
 p26	->//Job Sequencing with Deadlines
 p27	->//Activity Selection
 p28	->//Optimal Storage on Tapes
-p30	->////Huffman Codes
+p30	->//Huffman Codes
