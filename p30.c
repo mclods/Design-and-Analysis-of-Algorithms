@@ -1,4 +1,4 @@
-//Huffman Codes
+//Huffman Codes (Don't Use)
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -61,27 +61,26 @@ void extract_min(struct node a[],struct node **new)
   }
   strcpy((*new)->data,a[1].data);
   (*new)->freq=a[1].freq;
+  (*new)->lchild=a[1].lchild;
+  (*new)->rchild=a[1].rchild;
   a[1]=a[n];
   n-=1;
   min_heapify(a,1);
 }
 void printCodes(struct node *root, int arr[], int index)
 {
-  if (root->lchild!=NULL&&root->rchild!=NULL)
+  if(root->lchild!=NULL)
   {
-    printf("\nFuckL");
     arr[index]=0;
     printCodes(root->lchild,arr,index+1);
   }
   if (root->rchild!=NULL)
   {
-    printf("\nFuckR");
     arr[index]=1;
     printCodes(root->rchild,arr,index+1);
   }
   if ((root->lchild==NULL)&&(root->rchild== NULL))
   {
-    printf("\nFuckRL");
     printf("%s: ",root->data);
     int i;
     for (i=0;i<index;++i)
@@ -108,12 +107,8 @@ void hmc(struct node a[])
     sprintf(curr->data,"N%d",i);
     insert_heap(a,curr);
     ++i;
-    //for(j=1;j<=n;++j)
-      //printf("\nPrint %d->%s: %d",i,a[j].data,a[j].freq);
-    //printf("\n");
+
   }
-  //struct node *temp=&a[1];
-  //printf("\ntemp: %s :%d",temp->lchild->data,temp->lchild->freq);
   int arr[100];
   printCodes(&a[1],arr,0);
 }
@@ -127,7 +122,6 @@ int main()
   {
     printf("\nEnter the data and frequency:");
     scanf("%s%d",a[i].data,&a[i].freq);
-    printf("\t%s->%d",a[i].data,a[i].freq);
     a[i].lchild=NULL;
     a[i].rchild=NULL;
   }

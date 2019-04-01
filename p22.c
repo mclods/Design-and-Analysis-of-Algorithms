@@ -34,8 +34,8 @@ void quickSort(int A[],int s,int e)
 	if(s<e)
 	{
 		int pIndex=partition(A,s,e);
-		quickSort(A,s,pIndex-1);
-		quickSort(A,pIndex+1,e);
+		//quickSort(A,s,pIndex-1);
+		//quickSort(A,pIndex+1,e);
 	}
 }
 void randArr(int A[],int s,int e)
@@ -48,7 +48,7 @@ void randArr(int A[],int s,int e)
 }
 int main()
 {
-	int s,e,i;
+	int s=0,e=7,i;
 	printf("\nEnter the starting point:");
 	scanf("%d",&s);
 	printf("\nEnter the ending point:");

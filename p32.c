@@ -13,47 +13,53 @@ struct node{
   int key;
   int par;
 };
-int minIndex(struct node a[],int n)
+int min_key(struct node a[],int mst[],int n)
 {
-  int i,min=0;
-  for(i=1;i<n;++i)
+  int i,min=9999,min_index;
+  for(i=0;i<n;++i)
   {
-    if(a[i].key<a[min].key)
+    if((mst[i]!=1)&&(a[i].key<min))
     {
-      min=i;
+      min=a[i].key;
+      min_index=i;
     }
   }
-  return min;
+  return min_index;
+}
+void prim(struct node a[],int mst[],int n)
+{
+  int u,i;
+  a[0].key=0;
+  a[0].par=-1;
+  for(int c=0;c<n;++c)
+  {
+    u=min_key(a,mst,n);
+    mst[u]=1;
+    for(i=0;i<n;++i)
+    {
+      if((G[u][i]!=0)&&(mst[i]!=1)&&(G[u][i]<a[i].key))
+      {
+        a[i].key=G[u][i];
+        a[i].par=u;
+      }
+    }
+  }
 }
 int main()
 {
-  int i,mst[9],u,count=0;
+  int i,mst[9];
   struct node a[9];
   for(i=0;i<9;++i)
   {
     a[i].key=9999;
-    a[i].par=-1;
+    //a[i].par=-1;
     mst[i]=0;
   }
-  a[0].key=0;
-  while(count<9)
+  prim(a,mst,9);
+  printf("\nParent\tEdge");
+  for(i=1;i<9;++i)
   {
-    u=minIndex(a,9);
-    mst[u]=1;
-    ++count;
-    for(i=0;i<9;++i)
-    {
-      if((G[u][i]!=0)&&(mst[i]!=1)&&(G[u][i]<a[i].key))
-      {
-        a[i].par=u;
-        a[i].key=G[u][i];
-      }
-    }
-  }
-  printf("\nEdges Included:\n");
-  for(i=0;i<9;++i)
-  {
-    printf("\n(%d,%d)",a[i].par,i);
+    printf("\n%d\t%d",a[i].par,i);
   }
   return 0;
 }

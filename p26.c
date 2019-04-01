@@ -43,7 +43,7 @@ int jobSeq(struct jb a[],int n)
       {
         if(slot[j]==0)
         {
-          slot[j]=1;
+          slot[j]=a[i].jid;
           result[j]=i;
           break;
         }
@@ -51,8 +51,9 @@ int jobSeq(struct jb a[],int n)
     }
     for(i=0;i<n;++i)
     {
-      if(result[i]!=-1)
-        tprofit+=a[result[i]].profit;
+      //if(result[i]!=-1)
+      if(slot[i]!=0)
+        tprofit+=a[slot[i]-1].profit;
     }
     return tprofit;
 }
