@@ -1,6 +1,6 @@
 # Design-and-Analysis-of-Algorithms
 
-## p1	->//Generating Random Array and Multiplying all the elements\n
+### p1	->//Generating Random Array and Multiplying all the elements
 ## p2	->//Dynamically allocating 2D arrays
 ## p3	->//Using gettimeofday
 ## p4	->//Insertion Sort time calculated
